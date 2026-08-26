@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARA'S TRANSPORT | Licensed Private Passenger Transportation</title>
+  <meta name="description" content="Licensed private passenger transportation serving the Bowie area and surrounding communities. Pre-scheduled rides for seniors, medical visits, and events." />
+  
+  <style>
+    /* Color Palette Sampled Directly from the Flyer: Tan, Black, & White */
+    :root {
+      --flyer-black: #111111;         /* Deep Black Background */
+      --flyer-tan: #c9b097;           /* Warm Tan / Sand Accent */
+      --flyer-tan-dark: #b3997f;      /* Deep Tan for Hover */
+      --flyer-tan-light: #f5efe6;     /* Soft Tan/Cream Tint */
+      --flyer-white: #ffffff;         /* Pure White Text & Background */
+      --flyer-text-dark: #1a1a1a;     /* Dark Body Text */
+      --flyer-text-muted: #666666;    /* Muted Grey */
+      --flyer-border: #e2dcd5;        /* Light Tan Border */
+      --flyer-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--flyer-tan-light);
+      color: var(--flyer-text-dark);
+      line-height: 1.6;
+    }
+
+    /* Page Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(135deg, var(--flyer-black) 0%, #222222 100%);
+      color: var(--flyer-white);
+      padding: 3.5rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      margin-bottom: 2.5rem;
+      border-top: 5px solid var(--flyer-tan);
+      border-bottom: 2px solid var(--flyer-tan);
+    }
+
+    .brand-logo-wrap {
+      width: 170px;
+      height: 110px;
+      margin: 0 auto 1.5rem;
+      background: var(--flyer-white);
+      border: 3px solid var(--flyer-tan);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      color: var(--flyer-white);
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .hero p {
+      color: var(--flyer-tan);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0.5rem auto 1.75rem;
+      font-weight: 500;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background-color: var(--flyer-tan);
+      color: var(--flyer-black);
+      padding: 0.85rem 1.85rem;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid var(--flyer-white);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .hero-btn:hover {
+      background-color: var(--flyer-tan-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Flyer Section */
+    .flyer-showcase {
+      background: var(--flyer-white);
+      border: 1px solid var(--flyer-border);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      box-shadow: var(--flyer-shadow);
+    }
+
+    .flyer-img-wrap {
+      max-width: 480px;
+      margin: 1.25rem auto 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      border: 3px solid var(--flyer-tan);
+    }
+
+    .flyer-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 1.75rem;
+      text-align: center;
+      color: var(--flyer-black);
+      margin-bottom: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .service-card {
+      background: var(--flyer-white);
+      border: 1px solid var(--flyer-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      box-shadow: var(--flyer-shadow);
+      font-weight: 700;
+      color: var(--flyer-black);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--flyer-tan);
+    }
+
+    .service-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      fill: var(--flyer-tan);
+    }
+
+    /* Fleet & Booking Highlights */
+    .info-card {
+      background: var(--flyer-white);
+      border-left: 5px solid var(--flyer-tan);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--flyer-shadow);
+    }
+
+    .info-card h3 {
+      color: var(--flyer-black);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+
+    .info-card p {
+      color: var(--flyer-text-dark);
+      font-size: 1rem;
+    }
+
+    .rates-note {
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: var(--flyer-tan-dark);
+    }
+
+    /* Contact Block */
+    .contact-card {
+      background: var(--flyer-black);
+      color: var(--flyer-white);
+      padding: 2.5rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--flyer-shadow);
+      margin-bottom: 2.5rem;
+      border-top: 4px solid var(--flyer-tan);
+    }
+
+    .contact-card h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: var(--flyer-white);
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .contact-card p {
+      color: var(--flyer-tan);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      font-size: 1.15rem;
+    }
+
+    .contact-details div {
+      color: var(--flyer-white);
+    }
+
+    .contact-details a {
+      color: var(--flyer-tan);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+      color: var(--flyer-white);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--flyer-text-muted);
+      padding: 1rem 0;
+      border-top: 1px solid var(--flyer-border);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Hero -->
+    <header class="hero">
+      <div class="brand-logo-wrap">
+        <img 
+          src="IMG_33912.JPEG" 
+          alt="ARA'S TRANSPORT Range Rover Logo" 
+          class="brand-logo-img"
+        />
+      </div>
+      <h1>ARA'S TRANSPORT</h1>
+      <p>Licensed private passenger transportation business in the Bowie area. Comfortable, dependable, pre-scheduled rides tailored to your needs.</p>
+      <a href="tel:2409042437" class="hero-btn">Call to Schedule a Ride</a>
+    </header>
+
+    <main>
+      <!-- Official Business Flyer Section -->
+      <section class="flyer-showcase">
+        <h2 class="section-title" style="margin-bottom: 0.5rem;">Official Business Flyer</h2>
+        <p style="color: var(--flyer-text-muted);">View our official service menu and transportation announcement below.</p>
+        <div class="flyer-img-wrap">
+          <img 
+            src="flyer.JPEG" 
+            alt="ARA'S TRANSPORT Official Business Flyer" 
+            class="flyer-img"
+          />
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Senior Communities</span>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Assisted Living Facilities</span>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Rehabilitation Facilities</span>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Medical Office</span>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Physical Therapy Office Drop-Off</span>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Event Drop-Offs</span>
+        </div>
+      </div>
+
+      <!-- Fleet & Information Banner -->
+      <div class="info-card">
+        <h3>Private Luxury Fleet</h3>
+        <p>Ride in comfort, style, and privacy with our Range Rover service. We take pride in punctual, pre-scheduled rides ensuring you reach every destination on time.</p>
+        <p class="rates-note">*Rates will vary based on distance, pickup time, and destination.</p>
+      </div>
+
+      <!-- Contact Card -->
+      <section class="contact-card">
+        <h2>Book Your Ride</h2>
+        <p>Get in touch to confirm availability or request a quote for your scheduled trip.</p>
+        <div class="contact-details">
+          <div>Contact: <strong>Ms. Jeanette</strong></div>
+          <div>Phone: <a href="tel:2409042437">(240) 904-2437</a></div>
+          <div>Email: <a href="mailto:ARAsTransport@gmail.com">ARAsTransport@gmail.com</a></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; ARA'S TRANSPORT | Ms. Jeanette | Serving Bowie &amp; Surrounding Areas</p>
+    </footer>
+  </div>
+
+</body>
+</html>
