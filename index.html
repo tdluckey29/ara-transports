@@ -126,37 +126,23 @@
 
     /* Services Grid */
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
 
-    .service-card {
-      background: var(--flyer-white);
-      border: 1px solid var(--flyer-border);
-      border-radius: 10px;
-      padding: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      box-shadow: var(--flyer-shadow);
-      font-weight: 700;
-      color: var(--flyer-black);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
+/* Optional: Make it responsive on smaller screens */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    .service-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--flyer-tan);
-    }
-
-    .service-icon {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-      fill: var(--flyer-tan);
-    }
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     /* Fleet & Booking Highlights */
     .info-card {
