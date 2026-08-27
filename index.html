@@ -125,27 +125,55 @@
     }
 
     /* Services Grid */
-  .service-card {
+  .section-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+}
+
+.service-card {
   display: flex;
-  align-items: center; /* Aligns icon with center of text */
-  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;               /* Keeps card heights uniform */
   padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  gap: 0.6rem;
 }
 
 .service-icon {
-  width: 15px;       /* Scaled down from 20px */
-  height: 15px;      /* Scaled down from 20px */
-  min-width: 15px;   /* Prevents shrinking */
-  fill: currentColor;
+  width: 14px;                    /* Scaled down icon */
+  height: 14px;
+  min-width: 14px;
+  fill: #8a7a66;                  /* Subtle bronze/gold tint from screenshot */
   flex-shrink: 0;
 }
 
 .service-card span {
-  display: block;
-  font-size: 0.95rem;
-  line-height: 1.3;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
 }
 
+/* Responsive collapse on mobile */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
     /* Fleet & Booking Highlights */
     .info-card {
       background: var(--flyer-white);
@@ -266,38 +294,50 @@
         </div>
       </section>
 
-      <!-- Services Section -->
-      <h2 class="section-title">Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Senior Communities</span>
-        </div>
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Assisted Living Facilities</span>
-        </div>
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Rehabilitation Facilities</span>
-        </div>
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Medical Office</span>
-        </div>
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Physical Therapy Office Drop-Off</span>
-        </div>
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Professional Services</span>
-        </div>
-        <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-          <span>Event Drop-Offs</span>
-        </div>
-      </div>
+     <!-- Services Section -->
+<h2 class="section-title">PROFESSIONAL SERVICES</h2>
+
+<div class="services-grid">
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Senior Communities</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Assisted Living Facilities</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Rehabilitation Facilities</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Medical Office<br>Appointments</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Physical Therapy Office<br>Drop-Off</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Special Event Drop-Offs</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Private Pre-Scheduled<br>Transit</span>
+  </div>
+
+  <div class="service-card">
+    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+    <span>Door-to-Door Chauffeur<br>Service</span>
+  </div>
+</div>
 
       <!-- Fleet & Information Banner -->
       <div class="info-card">
