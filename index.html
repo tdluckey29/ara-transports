@@ -108,72 +108,59 @@
       transform: translateY(-2px);
     }
 
-   
-    }
-
-    
-
     /* Section Headings */
     .section-title {
-      font-size: 1.75rem;
       text-align: center;
-      color: var(--flyer-black);
-      margin-bottom: 1.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
       font-weight: 800;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+      color: var(--flyer-black);
+      text-transform: uppercase;
     }
 
     /* Services Grid */
-  .section-title {
-  text-align: center;
-  font-weight: 800;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
-}
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+    }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto 2rem auto;
-}
+    .service-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      padding: 0.75rem 1rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      gap: 0.6rem;
+    }
 
-.service-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 60px;               /* Keeps card heights uniform */
-  padding: 0.75rem 1rem;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  gap: 0.6rem;
-}
+    .service-icon {
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      fill: #8a7a66;
+      flex-shrink: 0;
+    }
 
-.service-icon {
-  width: 14px;                    /* Scaled down icon */
-  height: 14px;
-  min-width: 14px;
-  fill: #8a7a66;                  /* Subtle bronze/gold tint from screenshot */
-  flex-shrink: 0;
-}
+    .service-card span {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.25;
+    }
 
-.service-card span {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #111827;
-  line-height: 1.25;
-}
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-/* Responsive collapse on mobile */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
     /* Fleet & Booking Highlights */
     .info-card {
       background: var(--flyer-white);
@@ -189,11 +176,6 @@
       font-size: 1.25rem;
       margin-bottom: 0.5rem;
       font-weight: 800;
-    }
-
-    .info-card p {
-      color: var(--flyer-text-dark);
-      font-size: 1rem;
     }
 
     .fleet-details-list {
@@ -267,8 +249,20 @@
       text-align: center;
       font-size: 0.9rem;
       color: var(--flyer-text-muted);
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       border-top: 1px solid var(--flyer-border);
+    }
+
+    .site-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #0000ee; /* Default standard unvisited link color */
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .site-link:visited {
+      color: #0000ee; /* Keeps appearance identical even if visited */
     }
   </style>
 </head>
@@ -290,65 +284,59 @@
     </header>
 
     <main>
-      
+      <!-- Services Section -->
+      <h2 class="section-title">PROFESSIONAL SERVICES</h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Senior Communities</span>
         </div>
-      </section>
 
-     <!-- Services Section -->
-<h2 class="section-title">PROFESSIONAL SERVICES</h2>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Assisted Living Facilities</span>
+        </div>
 
-<div class="services-grid">
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Senior Communities</span>
-  </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Rehabilitation Facilities</span>
+        </div>
 
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Assisted Living Facilities</span>
-  </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Medical Office<br>Appointments</span>
+        </div>
 
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Rehabilitation Facilities</span>
-  </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Physical Therapy Office<br>Drop-Off</span>
+        </div>
 
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Medical Office<br>Appointments</span>
-  </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Special Event Drop-Offs</span>
+        </div>
 
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Physical Therapy Office<br>Drop-Off</span>
-  </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Private Pre-Scheduled<br>Transit</span>
+        </div>
 
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Special Event Drop-Offs</span>
-  </div>
-
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Private Pre-Scheduled<br>Transit</span>
-  </div>
-
-  <div class="service-card">
-    <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-    <span>Door-to-Door Chauffeur<br>Service</span>
-  </div>
-</div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          <span>Door-to-Door Chauffeur<br>Service</span>
+        </div>
+      </div>
 
       <!-- Fleet & Information Banner -->
       <div class="info-card">
         <h3>Private Luxury Fleet &amp; Professional Services</h3>
-        
         <ul class="fleet-details-list">
           <li><strong>Executive Range Rover:</strong> Clean, spacious, and comfortable luxury ride.</li>
           <li><strong>Professional Private Driver:</strong> Dedicated, door-to-door service with scheduled pickups.</li>
           <li><strong>Flexible Scheduling:</strong> Tailored for senior living visits, medical appointments, and professional transport.</li>
         </ul>
-
         <p class="rates-note">*Rates will vary based on distance, pickup time, and destination.</p>
       </div>
 
@@ -367,10 +355,7 @@
     <!-- Footer -->
     <footer>
       <p>&copy; ARA'S TRANSPORT | Ms. Jeanette | Serving Bowie &amp; Surrounding Areas</p>
-     
-        <a href="https://arastransports.netlify.app/" class="site-link">Visit Website: https://arastransports.netlify.app/</a>
-        </a>
-     
+      <a href="https://arastransports.netlify.app/" class="site-link">Visit Website: https://arastransports.netlify.app/</a>
     </footer>
   </div>
 
